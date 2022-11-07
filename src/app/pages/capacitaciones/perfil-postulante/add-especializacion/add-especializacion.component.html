@@ -1,0 +1,120 @@
+<div class="modal-header text-center">
+    <h5 class="modal-title text-center">Ver/Editar Formación</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="needs-validations" novalidate>
+      
+      <div class="mt-4">
+        <mat-form-field class="col-lg-4" appearance="outline">
+            <mat-label>Tipo de especializacion</mat-label>
+            <select matNativeControl required>
+                <option value="" selected disabled>Seleccionar opcion</option>
+                <option value="">GIRED</option>
+                <option value="">USAR</option>
+                <option value="">Combatientes del Fuego</option>
+            </select>
+        </mat-form-field>
+        <div class="d-flex justify-content-between">
+            <h5>Formacion</h5>
+            <button class="btn btn-primary" (click)="addSkillFormacion()">
+                <div class="d-flex align-middle">
+                    <mat-icon>add</mat-icon>Sumar formacion
+                </div>
+                
+            </button>
+
+        </div>
+        <div *ngIf="fichaPerfil.InfoFormacion.length == 0" style="color : rgb(139, 139, 139)">
+            <span class="mb-4">
+                No hay datos registrados aún
+            </span> 
+            <mat-divider></mat-divider>
+        </div>
+        <div *ngFor="let items of fichaPerfil.InfoFormacion; let index = index">
+           
+            <div class="mb-4">
+                <h6>Formacion #{{index + 1}}</h6>
+                <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Tipo de formacion</mat-label>
+                    <select matNativeControl required>
+                        <option value="" selected disabled>Seleccionar opcion</option>
+                        <option value="">Curso</option>
+                        <option value="">Diplomado</option>
+                        <option value="">Carreras profesionales</option>
+                        <option value="">Carreras tecnicas</option>
+                        <option value="">Cursos USAR</option>
+                    </select>
+                </mat-form-field>
+                <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Cursos</mat-label>
+                    <select matNativeControl required>
+                        <option value="" selected disabled>Seleccionar opcion</option>
+                        <option value="">Curso 1</option>
+                        <option value="">Curso 2</option>
+                        <option value="">Curso 3</option>
+                        <option value="">Curso 4</option>
+                        <option value="">Curso 5</option>
+                        <option value="">Curso 6</option>
+                    </select>
+                </mat-form-field>
+                <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Pais</mat-label>
+                    <select matNativeControl required>
+                        <option value="" selected disabled>Seleccionar opcion</option>
+                        <option value="">Espana</option>
+                        <option value="">Peru</option>
+                    </select>
+                </mat-form-field>
+                <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Area de estudio</mat-label>
+                    <select matNativeControl required>
+                        <option value="" selected disabled>Seleccionar opcion</option>
+                        <option value="">Apago de incendios</option>
+                        <option value="">Desactivacion de explosivos</option>
+                    </select>
+                </mat-form-field>
+                <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Institucion</mat-label>
+                    <input matInput type="text" placeholder="Institucion">
+                </mat-form-field>
+                <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <select matNativeControl required>
+                        <option value="" selected disabled>Seleccionar opcion</option>
+                        <option value="">Completo</option>
+                        <option value="">En curso</option>
+                        <option value="">Trunco</option>
+                    </select>
+                </mat-form-field>
+                <mat-form-field class="col-lg-6" appearance="outline">
+                    <mat-label>Fecha Inicio</mat-label>
+                    <input matInput type="month" placeholder="Fecha Inicio">
+                </mat-form-field>
+                <mat-form-field class="col-lg-6" appearance="outline">
+                    <mat-label>Fecha fin</mat-label>
+                    <input matInput type="month" placeholder="Fecha Fin">
+                </mat-form-field>
+                <mat-divider></mat-divider>
+            </div>
+            
+
+        </div>
+    </div>
+      <div class="row text-center">
+        <div class="col">
+          <div class="form-group mt-3 mb-0">
+            <button class="btn btn-primary mr-3 " (click)="guardarExperiencia()">
+              Guardar
+            </button>
+            <button type="button" class="btn btn-danger" (click)="closeModal()" >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

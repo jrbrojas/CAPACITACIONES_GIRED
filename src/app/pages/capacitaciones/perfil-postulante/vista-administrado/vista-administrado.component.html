@@ -1,0 +1,605 @@
+<app-breadcrumb [title]="'Administrado'" [items]="['Seguridad']" [active_item]="'Permisos'">
+</app-breadcrumb>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-3">
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-end">
+                            <button mat-icon-button color="primary" class="position-relative"
+                                (click)="viewEditDataBasic()">
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                        </div>
+                        <div class="svg-half d-flex justify-content-center">
+                            <img src="https://i.pravatar.cc/75" />
+                        </div>
+                        <div class="text-center mb-4 mt-4 text-primary font-weight-bold">
+                            <h6>Anderson Fabian Zavaleta Rodriguez</h6>
+                        </div>
+                        <div class="align-middle">
+                            <table class="product-page-width">
+                                <tbody>
+                                    <tr class="d-flex justify-content-between mb-2 align-middle">
+                                        <td> <b>Fecha de nacimiento:</b></td>
+                                        <td>24/10/1995</td>
+                                    </tr>
+                                    <tr class="d-flex justify-content-between mb-2 align-middle">
+                                        <td> <b>Genero:</b>
+                                        </td>
+                                        <td>Masculino</td>
+                                    </tr>
+                                    <tr class="d-flex justify-content-between mb-2 align-middle">
+                                        <td> <b>Estado civil:</b></td>
+                                        <td>Soltero/a</td>
+                                    </tr>
+                                    <tr class="d-flex justify-content-between mb-2 align-middle">
+                                        <td> <b>Documento:
+                                            </b></td>
+                                        <td>05412368</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-middle">
+                            <h6 class="font-weigth-bold">Datos de Contacto</h6>
+                            <!--<button mat-icon-button color="primary" class="position-relative" (click)="viewEditDataBasic()">
+                                <mat-icon>edit</mat-icon>
+                            </button>-->
+                        </div>
+                        <div class="align-middle">
+                            <table class="product-page-width">
+                                <tbody>
+                                    <tr class="d-flex justify-content-start mb-2 align-middle">
+                                        <td>
+                                            <mat-icon color="primary" class="mr-2">phone</mat-icon>
+                                        </td>
+                                        <td>994852035</td>
+                                    </tr>
+                                    <tr class="d-flex justify-content-start mb-2 align-middle">
+                                        <td>
+                                            <mat-icon color="primary" class="mr-2">mail</mat-icon>
+                                        </td>
+                                        <td>ejemplo@example.com</td>
+                                    </tr>
+                                    <tr class="d-flex justify-content-start mb-2 align-middle">
+                                        <td>
+                                            <mat-icon color="primary" class="mr-2">home</mat-icon>
+                                        </td>
+                                        <td>Psj. Invento 234, Los Olivos, Lima, Lima</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-9">
+            <div class="card">
+                <div class="card-body">
+                    <mat-tab-group mat-align-tabs="center">
+                        <div class="row">
+                            <mat-tab label="Formación Profesional">
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Formación Profesional</h6>
+                                    <button mat-icon-button class="btn btn-primary" (click)="addFormacion()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let i of dataEducation">
+                                    <div class="mt-2">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="text-primary mt-3">{{i.profesion}}</h6>
+                                            <div>
+                                                <button mat-icon-button color="primary">
+                                                    <mat-icon>edit</mat-icon>
+                                                </button>
+                                                <button mat-icon-button color="primary">
+                                                    <mat-icon>delete</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bold">{{i.institucion}}</div>
+                                        <div class="font-weight-bold text-secondary">{{i.nivelEducativo}} - {{i.grado}}
+                                        </div>
+                                        <div class="text-secondary">{{i.fechaInicio}} - {{i.fechaFin}}, {{i.pais}}</div>
+                                    </div>
+                                </div>
+                                <br>
+                                <mat-divider></mat-divider>
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Diplomado</h6>
+                                    <button mat-icon-button class="btn btn-primary" (click)="viewEditEspecializacion()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let i of especializacion">
+                                    <div class="mt-2">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="text-primary mt-3">{{i.nombreEspec}}</h6>
+                                            <div>
+                                                <button mat-icon-button color="primary">
+                                                    <mat-icon>edit</mat-icon>
+                                                </button>
+                                                <button mat-icon-button color="primary">
+                                                    <mat-icon>delete</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bold">{{i.codigoCertificado}}</div>
+                                        <div class="font-weight-bold text-secondary">{{i.grado}}
+                                        </div>
+                                        <div class="text-secondary">{{i.fechaInicio}} - {{i.fechaFin}}</div>
+                                    </div>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                </div>
+
+                                <mat-divider></mat-divider>
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Cursos</h6>
+                                    <button mat-icon-button class="btn btn-primary" (click)="viewEditEspecializacion()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let i of cursos">
+                                    <div class="mt-2">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="text-primary mt-3">{{i.nombreEspec}}</h6>
+                                            <div>
+                                                <button mat-icon-button color="primary">
+                                                    <mat-icon>edit</mat-icon>
+                                                </button>
+                                                <button mat-icon-button color="primary">
+                                                    <mat-icon>delete</mat-icon>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="font-weight-bold">{{i.codigoCertificado}}</div>
+                                        <div class="font-weight-bold text-secondary">{{i.grado}}
+                                        </div>
+                                        <div class="text-secondary">{{i.fechaInicio}} - {{i.fechaFin}}</div>
+                                    </div>
+                                    <br>
+                                    <mat-divider></mat-divider>
+                                </div>
+
+                                <mat-divider></mat-divider>
+                                <!-- <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Conocimiento y habilidades</h6>
+                                    <button mat-icon-button class="btn btn-primary">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let j of conocimientos">
+                                    <div class="d-flex justify-content-start">
+                                        <div class="badge badge-primary mb-2">{{j.nombreConocimiento}}</div>
+                                    </div>
+
+                                </div>
+                                <mat-divider></mat-divider>
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Subproceso de Respuesta con mayor experiencia</h6>
+                                    <button mat-icon-button class="btn btn-primary">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let j of subProcesoResMayorExp">
+                                    <div class="d-flex">
+                                        <div class="badge badge-primary mb-2">{{j.nombreSubproceso}}</div>
+                                    </div>
+
+                                </div>
+                                <br> -->
+                                <!-- <mat-divider></mat-divider>
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Nivel de experiencia o conocimiento frente a peligros de origen natural</h6>
+                                    <button mat-icon-button class="btn btn-primary">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let j of nivelExpFrentePeligros">
+                                    <div class="d-flex">
+                                        <div class="badge badge-primary mb-2">{{j.nombreExp}} - {{j.nivel}}</div>
+                                    </div>
+
+                                </div> -->
+
+                                <mat-divider></mat-divider>
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <h6>Idiomas</h6>
+                                    <button (click)="addIdioma()" mat-icon-button class="btn btn-primary">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <div *ngFor="let j of idiomas">
+                                    <div class="d-flex">
+                                        <div class="badge badge-primary mb-2">{{j.nombreExp}} - {{j.nivel}}</div>
+                                    </div>
+
+                                </div>
+
+                            </mat-tab>
+                            <mat-tab label="Experiencia Laboral">
+
+                                <div class="d-flex justify-content-between mt-4 align-middle">
+                                    <b>
+                                        <h6>Experiencia laboral</h6>
+                                    </b>
+                                    <button mat-icon-button class="btn btn-primary" (click)="addExperiencia()">
+                                        <mat-icon>add</mat-icon>
+                                    </button>
+                                </div>
+                                <hr>
+                                <mat-card  class="example-card">
+                                    <mat-card-actions class="col-lg-12">
+                                      <div class="d-flex justify-content-between">
+                                        <h5 style="color: blue;">Jefe de proyectos agiles</h5>
+                                        <div>
+                                          <button class="btn" style="color: rgb(92, 92, 92);">
+                                            <div>
+                                              <mat-icon>edit</mat-icon>
+                                            </div>
+                                          </button>
+                                          <button class="btn" style="color: rgb(92, 92, 92);">
+                                            <div>
+                                              <mat-icon>delete</mat-icon>
+                                            </div>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </mat-card-actions>
+                                    <mat-card-actions>
+                                      <h4>MUNICIPALIDAD DE LIMA - HOSPITALES DE LA SOLIDARIDAD</h4>
+                                    </mat-card-actions>
+                                    <mat-card-subtitle>
+                                      Nov 2021 -Feb 2022
+                                    </mat-card-subtitle>
+                                    <mat-card-content>
+                                      <a>
+                                        <li>Responsable de liderar el equipo SCRUM del proyecto para lograr el alcance definido en coordinación
+                                          con el cliente</li>
+                                        <li>Realizar seguimiento a los indicadores de presupuesto y tiempo, de acuerdo con el plan de trabajo
+                                          planificado. Lenguajes de programación</li>
+                                      </a>
+                                      <br>
+                                      <div>
+                                        <p><strong>5 Personas a cargo</strong></p>
+                                        <p><strong>Manejaba un presupuesto anual: </strong> Si</p>
+                                      </div>
+                                    </mat-card-content>
+                                    <mat-divider></mat-divider>
+                                    <mat-card-actions class="col-lg-12 mt-4">
+                                      <div class="d-flex justify-content-between">
+                                        <h5 style="color: blue;" class="mt-4">Jefe de proyectos agiles</h5>
+                                        <div>
+                                          <button class="btn" style="color: rgb(92, 92, 92);">
+                                            <div>
+                                              <mat-icon>edit</mat-icon>
+                                            </div>
+                                          </button>
+                                          <button class="btn" style="color: rgb(92, 92, 92);">
+                                            <div>
+                                              <mat-icon>delete</mat-icon>
+                                            </div>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </mat-card-actions>
+                                    <mat-card-actions>
+                                      <h4>JEFE DIRECCION DE RESPUESTA - INDECI</h4>
+                                    </mat-card-actions>
+                                    <mat-card-subtitle>
+                                      Nov 2021 - Feb 2022
+                                    </mat-card-subtitle>
+                                    <mat-card-content>
+                                      <a>
+                                        <li>Responsable de liderar el equipo SCRUM del proyecto para lograr el alcance definido en coordinación con el cliente</li>
+                                        <li>Realizar seguimiento a los indicadores de presupuesto y tiempo, de acuerdo con el plan de trabajo planificado. Lenguajes de programación</li>
+                                      </a>
+                                      <br>
+                                      <div>
+                                        <p><strong>20 Personas a cargo</strong></p>
+                                        <p><strong>Manejaba un presupuesto anual : Si</strong></p>
+                                      </div>
+                                    </mat-card-content>
+                                    <mat-card-actions>
+                                      <h5></h5>
+                                    </mat-card-actions>
+                                  </mat-card>
+                            </mat-tab>
+                            
+                            <mat-tab label="Experiencia USAR">
+                            <br>
+                            <div class="col-lg-12 row">
+                            <div class="col-lg-4">
+                                <label>Tiempo de Experiencia en actividades de Búsqueda y Rescate o manejo de Emergencias: </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione Años</mat-label>
+                                <select matNativeControl required>
+                                    <option value="" selected disabled>Seleccionar opcion</option>
+                                    <option *ngFor="let aptitudFisica of selectNumero; let i = index" [ngValue]="aptitudFisica">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-lg-4">
+                                <label>¿En cuantas misiones USAR has participado?</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione veces</mat-label>
+                                <select matNativeControl required>
+                                    <option value="" selected disabled>Seleccionar opcion</option>
+                                    <option *ngFor="let aptitudFisica of selectNumero; let i = index" [ngValue]="aptitudFisica">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>    
+                            <div class="col-lg-12">
+                                <label><b>¿Tiene experiencia o Conocimiento frente a peligros de origen natural?</b></label>
+                            </div>   
+                            <div class="col-lg-4">
+                                <label>Huaicos:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi1" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi1 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Heladas-Friajes:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi2" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>  
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi2 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Sismos:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi3" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi3 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Incendios Forestales:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi4" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>   
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi4 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>T-Sunami:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi5" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi5 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Actividades volcánicas:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi6" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>  
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi6 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Inundaciones:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi7" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi7 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Lluvias Intensas:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi8" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div> 
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi8 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Emergencias Ambientales:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi9" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div>
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi9 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>
+                            <div class="col-lg-4">
+                                <label>Incidentes con materiales peligrosos:</label>
+                            </div>
+                            <div class="col-lg-8">
+                                <mat-form-field appearance="outline">
+                                <mat-label>Seleccione</mat-label>
+                                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi10" required>
+                                    <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                                </select>
+                                </mat-form-field>
+                            </div> 
+                            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi10 == 1" appearance="outline">
+                                <mat-label>Ingrese la experiencia realizada</mat-label>
+                                <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+                            </mat-form-field>                       
+                            </div>
+                            </mat-tab>
+                        
+                            <mat-tab label="Alergias">
+                                <div class="row pt-4">  
+                                <div class="col-sm-12">
+                                    <label><b>Alergias y/o Contraindicaciones</b></label>
+                                </div>   
+                                <div class="col-sm-12">
+                                    <mat-form-field class="col-lg-12" appearance="outline">
+                                    <mat-label>Ingrese las alergias y/o contraindicaciones de medicamentos a considerar</mat-label>
+                                    <textarea matInput type="text" rows="4" placeholder="Ingrese las alergias y/o contraindicaciones de medicamentos a considerar"></textarea>
+                                    </mat-form-field>                 
+                                </div>
+                                </div>
+                            </mat-tab>
+                            <!-- <mat-tab label="Libro Tareas Posición (LTP)">
+
+                                <div class="mt-4">
+                                    <mat-form-field class="col-lg-4" appearance="outline">
+                                        <mat-label>Seleccione LTP</mat-label>
+                                        <select matNativeControl required formControlName="tarea"
+                                            (change)="changeEvent($event)">
+                                            <option value="" selected disabled>Seleccionar opcion</option>
+                                            <option value="1">LTP 1</option>
+                                            <option value="2">LTP 2</option>
+                                            <option value="3">LTP 3</option>
+                                        </select>
+                                    </mat-form-field>
+                                </div>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">ID</th>
+                                            <th class="text-center">NOMBRE DE TAREA</th>
+                                            <th class="text-center">DESCRIPCION</th>
+                                            <th class="text-center">CUMPLIO</th>
+                                            <th class="text-center">Evidencia (Adjunto)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <ng-container *ngIf="l1">
+                                            <tr class="text-center" *ngFor="let i of list1">
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.nombre}}</td>
+                                                <td>{{i.descripcion}}</td>
+                                                <td>
+                                                    <mat-checkbox (change)="checked($event)"></mat-checkbox>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <input type="file" [disabled]="!isChecked">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+
+                                        <ng-container *ngIf="l2">
+                                            <tr class="text-center" *ngFor="let i of list2">
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.nombre}}</td>
+                                                <td>{{i.descripcion}}</td>
+                                                <td>
+                                                    <mat-checkbox (change)="checked($event)"></mat-checkbox>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <input type="file" [disabled]="!isChecked">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+
+                                        <ng-container *ngIf="l3">
+                                            <tr class="text-center" *ngFor="let i of list3">
+                                                <td>{{i.id}}</td>
+                                                <td>{{i.nombre}}</td>
+                                                <td>{{i.descripcion}}</td>
+                                                <td>
+                                                    <mat-checkbox (change)="checked($event)"></mat-checkbox>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <input type="file" [disabled]="!isChecked">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </ng-container>
+
+                                    </tbody>
+                                </table>
+                            </mat-tab> -->
+                        </div>
+
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

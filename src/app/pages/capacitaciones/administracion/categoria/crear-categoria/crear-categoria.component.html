@@ -1,0 +1,38 @@
+<div class="modal-header text-center">
+    <h5 class="modal-title text-center">Registrar Categoria Nueva</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="needs-validations" novalidate>
+
+      <div class="pt-4">
+        <mat-form-field class="col-lg-6" appearance="outline">
+            <mat-label>Acronimo de categoria</mat-label>
+            <input matInput type="text" placeholder="Acronimo de categoria">
+        </mat-form-field>
+        <mat-form-field class="col-lg-6" appearance="outline">
+            <mat-label>Nombre de categoria</mat-label>
+            <input matInput type="text" placeholder="Nombre de categoria">
+        </mat-form-field>
+        <mat-form-field class="col-lg-12" appearance="outline">
+            <mat-label>Descripcion de categoria</mat-label>
+            <textarea matInput required name="" id="" cols="30" rows="5" placeholder="Descripcion de categoria"></textarea>
+        </mat-form-field>
+    </div>
+
+      <div class="row text-center">
+        <div class="col">
+          <div class="form-group mt-3 mb-0">
+            <button class="btn btn-primary mr-3 " (click)="save()">
+              Guardar
+            </button>
+            <button type="button" class="btn btn-danger" (click)="closeModal()" >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

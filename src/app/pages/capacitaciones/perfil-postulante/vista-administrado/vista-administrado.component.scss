@@ -1,0 +1,23 @@
+.svg-half {
+    position: relative;
+  }
+  .svg-half img {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+  }
+  .svg-half svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 75px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    overflow: visible;
+    stroke: #ff5722;
+    stroke-width: 6;
+    transform: rotate(90deg);
+    stroke: url(#gradiant);
+  }

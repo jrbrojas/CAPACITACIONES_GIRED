@@ -1,0 +1,287 @@
+<app-breadcrumb [title]="'Crear Nuevo Usuario'" [items]="['Seguridad','Usuarios']" [active_item]="'Crear'">
+</app-breadcrumb>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="card">
+              <div class="card-body">
+                  <form class="needs-validation" novalidate [formGroup]="createUserform">
+                      <h6>Datos de Usuarios</h6>
+                      <hr>
+                      <div class="row">
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>TITULO</label>
+                                  <ng-select formControlName="titulo" placeholder="Seleccione" [items]="selectTitulos"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>GENERO</label>
+                                  <ng-select formControlName="genero" placeholder="Seleccione" [items]="selectGeneros"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>TIPO DOCUMENTO</label>
+                                  <ng-select formControlName="tipoDocumento" placeholder="Seleccione" [items]="selectTiposDocumentos"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>N&Uacute;MERO DE DOCUMENTO</label>
+                                  <input formControlName="numeroDocumento" type="text" class="form-control">
+                                  <!-- <button matSuffix mat-icon-button (click)="consultarDni()" >
+                                      <mat-icon>search</mat-icon>
+                                  </button> -->
+                              </div>
+                              <!-- <div class="form-group" *ngIf="createUser.get('idTipoDocumento')?.value != '2' &&
+                                  createUser.get('idTipoDocumento')?.value != '3' &&
+                                  createUser.get('idTipoDocumento')?.value != '4' &&
+                                  createUser.get('idTipoDocumento')?.value != ''">
+                                  <label>N&Uacute;MERO DE DOCUMENTO (DNI)</label>
+                                  <input type="text" class="form-control" pattern="[0-9]{8}"
+                                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                      maxlength="8" formControlName="numeroDocumento">
+                                  <button matSuffix mat-icon-button (click)="consultarDni()">
+                                          <mat-icon>search</mat-icon>
+                                  </button>
+                                      <span style="color: #ff0000;"
+                                      *ngIf="this.createUser.get('numeroDocumento')?.errors?.['required']">
+                                      (El dni no puede quedar vac&iacute;o)
+                                  </span>
+                              </div>
+                              <div class="form-group" *ngIf="createUser.get('idTipoDocumento')?.value != '1' &&
+                                      createUser.get('idTipoDocumento')?.value != '3' &&
+                                      createUser.get('idTipoDocumento')?.value != '4' &&
+                                      createUser.get('idTipoDocumento')?.value != ''">
+                                  <label>N&Uacute;MERO DE DOCUMENTO (PASAPORTE)</label>
+                                  <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control" maxlength="12"
+                                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                      formControlName="numeroDocumento">
+                                      <button matSuffix mat-icon-button (click)="consultarDni()">
+                                          <mat-icon>search</mat-icon>
+                                      </button>
+                                  <span style="color: #ff0000;"
+                                      *ngIf="this.createUser.get('numeroDocumento')?.errors?.['required']">
+                                      (El pasaporte no puede quedar vac&iacute;o)
+                                  </span>
+                              </div>
+                              <div class="form-group" *ngIf="createUser.get('idTipoDocumento')?.value != '1' &&
+                                      createUser.get('idTipoDocumento')?.value != '2' &&
+                                      createUser.get('idTipoDocumento')?.value != '4' &&
+                                      createUser.get('idTipoDocumento')?.value != ''">
+                                  <label>N&Uacute;MERO DE DOCUMENTO (CARNET DE EXTRANJER&Iacute;A)</label>
+                                  <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control"
+                                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                      maxlength="12" formControlName="numeroDocumento">
+                                      <button matSuffix mat-icon-button (click)="consultarDni()">
+                                          <mat-icon>search</mat-icon>
+                                      </button>
+                                  <span style="color: #ff0000;"
+                                      *ngIf="this.createUser.get('numeroDocumento')?.errors?.['required']">
+                                      (El carnet de extranjer&iacute;a no puede quedar vac&iacute;o)
+                                  </span>
+                              </div>
+                              <div class="form-group" *ngIf="createUser.get('idTipoDocumento')?.value != '1' &&
+                                      createUser.get('idTipoDocumento')?.value != '2' &&
+                                      createUser.get('idTipoDocumento')?.value != '3' &&
+                                      createUser.get('idTipoDocumento')?.value != ''">
+                                  <label>N&Uacute;MERO DE DOCUMENTO (OTROS DOCUMENTOS)</label>
+                                  <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control"
+                                      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                      maxlength="15" formControlName="numeroDocumento">
+                                      <button matSuffix mat-icon-button (click)="consultarDni()">
+                                          <mat-icon>search</mat-icon>
+                                      </button>
+                                  <span style="color: #ff0000;"
+                                      *ngIf="this.createUser.get('numeroDocumento')?.errors?.['required']">
+                                      (Otros Documentos no puede quedar vac&iacute;o)
+                                  </span>
+                              </div> -->
+                          </div>
+
+                          <div class="col-sm-3">
+                              <div class="form-group ">
+                                  <div class="form-group">
+                                      <label>NOMBRES</label>
+                                      <input formControlName="nombres" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control" formControlName="nombres" >
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>APELLIDOS</label>
+                                      <input formControlName="apellidos" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control" formControlName="apellidos">
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>PAÍS DE RESIDENCIA</label>
+                                  <ng-select formControlName="paisResidencia" placeholder="Seleccione" [items]="selectPaisesResidencias"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>DEPARTAMENTO DE RESIDENCIA</label>
+                                  <ng-select formControlName="departamentoResidencia" placeholder="Seleccione" [items]="selectDepartamentosResidencias"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>PROVINCIA DE RESIDENCIA</label>
+                                  <ng-select formControlName="provinciaResidencia" placeholder="Seleccione" [items]="selectProvinciasResidencias"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>DISTRITO DE RESIDENCIA</label>
+                                  <ng-select formControlName="distritoResidencia" placeholder="Seleccione" [items]="selectDistritosResidencias"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>DIRECCION DE RESIDENCIA</label>
+                                      <input formControlName="direccionResidencia" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>CODIGO POSTAL DE RESIDENCIA</label>
+                                      <input formControlName="codigoPostalResidencia" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>CELULAR</label>
+                                      <input formControlName="celular" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>TELEFONO</label>
+                                      <input formControlName="telefono" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>FAX</label>
+                                      <input formControlName="fax" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <label>ORGANIZACION / INSTITUCIÓN</label>
+                                  <ng-select formControlName="organizacionInstitucion" placeholder="Seleccione" [items]="selectOrganizacionesInstituciones"
+                                  bindLabel="nombre" bindValue="id">
+                                  </ng-select>
+                              </div>
+                          </div>
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>CARGO</label>
+                                      <input formControlName="cargo" onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <h6 >Usuarios</h6>
+                      <hr>
+                      <div class="row" >
+                          <div class="col-sm-3">
+                              <div class="form-group">
+                                  <div class="form-group">
+                                      <label>USUARIO</label>
+                                      <input formControlName="usuario" onkeyup="this.value=this.value.toUpperCase();" readonly
+                                          class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                              <div class="form-group ">
+                                  <div class="form-group">
+                                      <label>CONTRASE&Ntilde;A</label>
+                                      <input formControlName="contrasenia" type="password" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="col-sm-3">
+                              <div class="form-group ">
+                                  <div class="form-group">
+                                      <label>EMAIL</label>
+                                      <input formControlName="email" type="text" class="form-control"
+                                          placeholder="Ex. pat@example.com">
+                                  </div>
+                              </div>
+                          </div>
+
+
+                      </div>
+
+
+                      <div class="col-sm-3">
+                          <div class="form-group">
+                              <label>PERFILES</label>
+                              <ng-container>
+                                  <ng-container>
+                                      <ng-select formControlName="perfil" [items]="selectPerfiles"
+                                          bindLabel="nombre" bindValue="id"
+                                          placeholder="Seleccione" [multiple]="false">
+                                      </ng-select>
+                                  </ng-container>
+                              </ng-container>
+                          </div>
+                      </div>
+                      <div class="row text-center">
+                          <div class="col">
+                              <div class="form-group mb-0">
+                                  <button type="button" class="btn btn-primary mr-3" (click)="guardarUsuario()">
+                                      <span>Guardar</span>
+                                  </button>
+                                  <button type="button" class="btn btn-danger"
+                                      (click)="cancelProject()">Cancelar</button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

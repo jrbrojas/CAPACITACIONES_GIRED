@@ -1,0 +1,162 @@
+<app-breadcrumb [title]="'Analisis de administrados'" [items]="['Seguridad']" [active_item]="'Permisos'"></app-breadcrumb>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form>
+                        <div class="row">
+
+                            <!-- <mat-form-field class="col-lg-3" appearance="outline">
+                                <mat-label>Tipo de Certificación</mat-label>
+                                <select matNativeControl required>
+                                    <option value="" selected disabled>Seleccionar opcion</option>
+                                    <option value="">USAR</option>
+                                </select>
+                            </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                              <mat-label>Aptitud Física</mat-label>
+                              <select matNativeControl required>
+                                  <option value="" selected disabled>Seleccionar opcion</option>
+                                  <option value="">Arduo</option>
+                                  <option value="">Moderado</option>
+                                  <option value="">Ligero</option>
+                              </select>
+                          </mat-form-field>
+                          <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Nivel de Experiencia</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Alta</option>
+                                <option value="">Media</option>
+                                <option value="">Baja</option>
+                            </select>
+                        </mat-form-field> -->
+                        <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Años de Experiencia</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Mayor a 2 anios</option>
+                                <option value="">Mayor a 5 anios</option>
+                                <option value="">Mayor a 10 anios</option>
+                            </select>
+                        </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                              <mat-label>Cursos Certificados</mat-label>
+                              <select matNativeControl required>
+                                  <option value="" selected disabled>Seleccionar opcion</option>
+                                  <option value="" *ngFor="let item of arrCursos">{{item.nombre}}</option>
+
+                              </select>
+                          </mat-form-field>
+
+                          <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Asignación</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="" *ngFor="let item of arrAsignacion">{{item.nombre}}</option>
+                              </select>
+                        </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                              <mat-label>País Residencia</mat-label>
+                              <select matNativeControl required>
+                                  <option value="" selected disabled>Seleccionar opcion</option>
+                                  <option value="">Perú</option>
+                              </select>
+                          </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                              <mat-label>Departamento Residencia</mat-label>
+                              <select matNativeControl required>
+                                  <option value="" selected disabled>Seleccionar opcion</option>
+                                  <option value="">Lima</option>
+                              </select>
+                          </mat-form-field>
+                          <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Provincia Residencia</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Lima</option>
+                            </select>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-3" appearance="outline">
+                          <mat-label>Distrito Residencia</mat-label>
+                          <select matNativeControl required>
+                              <option value="" selected disabled>Seleccionar opcion</option>
+                              <option value="">Lince</option>
+                          </select>
+                          </mat-form-field>
+                          <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Rango de edades</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">18-40 años</option>
+                                <option value="">40-50 años</option>
+                                <option value="">50 a más</option>
+                            </select>
+                        </mat-form-field>
+                          <div class="col-sm-6">
+
+                          </div>
+                            <div class="col-sm-3 text-center">
+                                <a class="btn btn-primary btn-lg"
+                                    ngbTooltip="Filtrar"
+                                    style="margin-top : 10px"
+                                    (click)="filtrar()">
+                                    <i class="fa fa-filter"></i> Filtrar
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="table-responsive" [hidden]="boolOp">
+                            <div id="data-source-1_wrapper" class="dataTables_wrapper">
+                                <div class="dataTables_length">
+                                    <label>Mostrar
+                                        <select name="data-source-1_length" formControlName="cantidadRegistro">
+                                            <option value="10" selected>10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entradas</label>
+                                </div>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">DNI</th>
+                                            <th class="text-center">Apellidos y Nombres</th>
+                                            <th class="text-center">Asignación</th>
+                                            <th class="text-center">Departamento</th>
+                                            <th class="text-center">Provincia</th>
+                                            <th class="text-center">Distrito</th>
+                                            <th class="text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center" *ngFor="let administrados of arrAdministrados">
+                                        <td>{{administrados.dni}}</td>
+                                        <td>{{administrados.apellidosNombres}}</td>
+                                        <td>{{administrados.asignacion}}</td>
+                                        <td>{{administrados.departamento}}</td>
+                                        <td>{{administrados.provincia}}</td>
+                                        <td>{{administrados.distrito}}</td>
+                                        <td>
+                                            <a (click)="verPerfil()"
+                                            style="cursor : pointer"
+                                              ngbTooltip="Ver Perfil">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        </td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

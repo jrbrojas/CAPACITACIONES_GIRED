@@ -1,0 +1,123 @@
+<div class="modal-header text-center">
+  <h5 class="modal-title text-center">Editar Asignación </h5>
+  <button class="close" type="button" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="needs-validations" novalidate>
+    
+    <div class="pt-4">
+      <mat-form-field class="col-lg-4" appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <select matNativeControl [(ngModel)]="idCategria" [ngModelOptions]="{standalone: true}" required>
+              <option *ngFor="let item of arrCategoria" [value]="item.id">{{item.nombre}}</option>
+          </select>
+      </mat-form-field>
+      <mat-form-field class="col-lg-4" appearance="outline">
+          <mat-label>Nombre de asignación</mat-label>
+          <input matInput type="text" value="Lider de Equipo" placeholder="Nombre de asignación">
+      </mat-form-field>
+      <mat-form-field class="col-lg-4" appearance="outline">
+          <mat-label>Acronimo de asignación</mat-label>
+          <input matInput type="text" value="LE01" placeholder="Acronimo de asignación">
+      </mat-form-field>
+      <mat-form-field class="col-lg-6" appearance="outline">
+          <mat-label>Calificado como</mat-label>
+          <select matNativeControl [(ngModel)]="idCalificado" [ngModelOptions]="{standalone: true}" required>
+              <option value="">Ninguna</option>
+            <option *ngFor="let item of arrCalificado" [value]="item.id">{{item.nombre}}</option>
+        </select>
+          <!-- <select matNativeControl [(ngModel)]="idCalificado" [ngModelOptions]="{standalone: true}" value="Lider de Equipo" required>
+              <option>Lider de Equipo</option>
+              <option value="" disabled>Seleccionar opcion</option>
+              <option value="">Ninguna</option>
+              <option *ngFor="let item of arrCalificado" [value]="item.id">{{item.nombre}}</option>
+          </select> -->
+      </mat-form-field>
+      <!-- <mat-form-field class="col-lg-6" appearance="outline">
+          <mat-label>Aptitud Fisica</mat-label>
+          <select matNativeControl required>
+              <option value="" selected disabled>Seleccionar opcion</option>
+              <option value="">Ligero</option>
+              <option value="">Moderado</option>
+              <option value="">Arduo</option>
+          </select>
+      </mat-form-field> -->
+      <mat-form-field class="col-lg-12" appearance="outline">
+          <mat-label>Descripcion de la posición</mat-label>
+          <textarea matInput required name="" id="" cols="30" rows="5" value="DESCRIPCION DE LA ASIGNACION LIDER DE EQUIPO" placeholder="Descripcion de l posición"></textarea>
+      </mat-form-field>
+      <div class="d-flex justify-content-between">
+        <div class="col-lg-3">
+          <mat-label>Capacitaciones Requeridas
+            <button mat-icon-button (click)="cursoAdd()" aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-label>
+          <hr>
+          <mat-form-field class="col-lg-12" *ngFor="let item of arrCursos" appearance="outline">
+            <mat-label>Codigo de curso</mat-label>
+            <input matInput type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.nombre" placeholder="Codigo de curso">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3">
+          <mat-label>Capacitaciones Adicional 
+            <button mat-icon-button (click)="adicionalAdd()" aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-label>
+          <hr>
+          <mat-form-field class="col-lg-12" *ngFor="let item of arrAdicional" appearance="outline">
+            <mat-label>Adicional</mat-label>
+            <input matInput type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="item.nombre" placeholder="Adicional">
+          </mat-form-field>
+        </div>
+        <div class="col-lg-3">
+          <mat-label>Experiencia
+            <button mat-icon-button (click)="experienciaAdd()" aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-label>
+          <hr>
+          <mat-form-field *ngFor="let item of arrEsperiencia"  class="col-lg-12" appearance="outline">
+            <mat-label>Experiencia</mat-label>
+            <select matNativeControl [(ngModel)]="idExpriencia" [ngModelOptions]="{standalone: true}" required>
+              <option value="" selected disabled>Seleccionar opcion</option>
+              <option *ngFor="let item of arrExperienciaSelect" [value]="item.id" >{{item.nombre}}</option>
+            </select>
+          </mat-form-field>
+        </div>
+        <!-- <div class="col-lg-3">
+          <mat-label>LTP
+            <button mat-icon-button (click)="ltpAdd()" aria-label="Example icon button with a vertical three dot icon">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-label>
+          <hr>
+          <mat-form-field *ngFor="let item of arrLTP"  class="col-lg-12" appearance="outline">
+            <mat-label>Adicional</mat-label>
+            <select matNativeControl [(ngModel)]="idLTP" [ngModelOptions]="{standalone: true}" required>
+              <option value="" selected disabled>Seleccionar opcion</option>
+              <option *ngFor="let item of arrLTPSelect" [value]="item.id" >{{item.nombre}}</option>
+            </select>
+          </mat-form-field>
+        </div> -->
+      </div>
+
+  </div>
+    
+    <div class="row text-center">
+      <div class="col">
+        <div class="form-group mt-3 mb-0">
+          <button class="btn btn-primary mr-3 " (click)="guardar()">
+            Guardar
+          </button>
+          <button type="button" class="btn btn-danger" (click)="closeModal()" >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

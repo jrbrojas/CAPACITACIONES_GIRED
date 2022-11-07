@@ -1,0 +1,87 @@
+<app-breadcrumb [title]="'Perfiles'" [items]="['Seguridad']" [active_item]="'Permisos'"></app-breadcrumb>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+
+          <form>
+            <div class="row">
+
+              <div class="col-sm-8">
+                <div class="form-group" style="font-size: 13px">
+                  <div class="mb-2">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Buscar por Perfil</mat-label>
+                      <input matInput type="text">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-2">
+
+              </div>
+              <div class="col-sm-2">
+                <a class="btn btn-primary btn-lg" (click)="createPermission()" ngbTooltip="Nuevo Permiso">
+                  <i class="fa fa-plus-square-o"></i> Nuevo
+                </a>
+              </div>
+            </div>
+            <br>
+            <div class="table-responsive">
+              <div id="data-source-1_wrapper" class="dataTables_wrapper">
+                <div class="dataTables_length">
+                  <label>Mostrar
+                    <select name="data-source-1_length">
+                      <option value="10" selected>10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select> entradas</label>
+                </div>
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center">PERFIL</th>
+                      <th class="text-center">DESCRIPCIÓN</th>
+                      <th class="text-center">PERMISOS</th>
+                      <th class="text-center">HABILITADO</th>
+                      <th class="text-center">OPCIONES</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr class="text-center" *ngFor="let i of data">
+                      <td>{{i.perfil}}</td>
+                      <td>{{i.descripcion}}</td>
+                      <td>{{i.permisos}}</td>
+                      <td>{{i.habilitado}}</td>
+                      <td>
+                        <div>
+                          <a style="color: #08afe0; cursor: pointer; font-size: 20px" ngbTooltip="Ver / Editar" (click)="editar()">
+                            <i class="fa fa-edit"></i>
+                          </a>
+                          <a class="mr-2 ml-2" style="color: #f73164; cursor: pointer; font-size: 20px"
+                            ngbTooltip="Eliminar" (click)="eliminarPerfil()">
+                            <i class="fa fa-trash"></i>
+                          </a>
+                        </div>
+
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

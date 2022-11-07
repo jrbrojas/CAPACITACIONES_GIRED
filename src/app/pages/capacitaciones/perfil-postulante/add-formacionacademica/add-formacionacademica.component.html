@@ -1,0 +1,97 @@
+<div class="modal-header text-center">
+    <h5 class="modal-title text-center">Formación Profesional</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="needs-validations" novalidate [formGroup]="form">
+  
+        
+            <div class="d-flex justify-content-betweeen mt-2 mb-4">
+                <button class="btn btn-primary" (click)="addSkillFormacion()">
+                    <div class="d-flex align-middle">
+                        <mat-icon>add</mat-icon>Sumar formacion
+                    </div>
+                </button>   
+            </div>             
+            <div *ngIf="fichaPerfil.InfoFormacion.length == 0" style="color : rgb(139, 139, 139)">
+                <span class="mb-4">
+                    No hay datos registrados aún
+                </span> 
+                <mat-divider></mat-divider>
+            </div>
+            <div *ngFor="let items of fichaPerfil.InfoFormacion; let index = index">
+
+                <div class="mb-4">
+                  <h6>Formacion #{{index + 1}}</h6>
+                  <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Tipo de formacion</mat-label>
+                    <select formControlName="tipoFormacion" matNativeControl required>
+                      <option value="" selected disabled>Seleccionar opcion</option>
+                      <option *ngFor="let tipoFormacion of selectTipoFormacion; let i = index" [ngValue]="tipoFormacion.id">{{ tipoFormacion.nombre }}</option>
+                    </select>
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-4" appearance="outline" *ngIf="form.get('tipoFormacion').value == 4">
+                    <mat-label>Ingrese el nombre del curso</mat-label>
+                    <input formControlName="institucion" matInput type="text" placeholder="Institucion">
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-4" appearance="outline" *ngIf="form.get('tipoFormacion').value != 4">
+                    <mat-label>Cursos</mat-label>
+                    <select formControlName="curso" matNativeControl required>
+                      <option value="" selected disabled>Seleccionar opcion</option>
+                      <option *ngFor="let curso of selectCursos; let i = index" [ngValue]="curso">{{ curso.nombre }}</option>
+                    </select>
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Pais</mat-label>
+                    <select formControlName="pais" matNativeControl required>
+                      <option value="" selected disabled>Seleccionar opcion</option>
+                      <option *ngFor="let pais of selectPais; let i = index" [ngValue]="pais">{{ pais.nombre }}</option>
+                    </select>
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Area de estudio</mat-label>
+                    <select formControlName="areaEstudio" matNativeControl required>
+                      <option value="" selected disabled>Seleccionar opcion</option>
+                      <option *ngFor="let areaEstudio of selectAreasEstudio; let i = index" [ngValue]="areaEstudio">{{ areaEstudio.nombre }}</option>
+                    </select>
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Institucion</mat-label>
+                    <input formControlName="institucion" matInput type="text" placeholder="Institucion">
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-4" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <select formControlName="estado" matNativeControl required>
+                      <option value="" selected disabled>Seleccionar opcion</option>
+                      <option *ngFor="let estado of selectEstados; let i = index" [ngValue]="estado">{{ estado.nombre }}</option>
+                    </select>
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-6" appearance="outline">
+                    <mat-label>Fecha Inicio</mat-label>
+                    <input formControlName="fechaInicio" matInput type="month" placeholder="Fecha Inicio">
+                  </mat-form-field>
+                  <mat-form-field class="col-lg-6" appearance="outline">
+                    <mat-label>Fecha fin</mat-label>
+                    <input formControlName="fechaFin" matInput type="month" placeholder="Fecha Fin">
+                  </mat-form-field>
+                  <mat-divider></mat-divider>
+                </div>
+            </div>
+      
+      <div class="row text-center">
+        <div class="col">
+          <div class="form-group mt-3 mb-0">
+            <button class="btn btn-primary mr-3 " (click)="guardarExperiencia()">
+              Guardar
+            </button>
+            <button type="button" class="btn btn-danger" (click)="closeModal()" >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

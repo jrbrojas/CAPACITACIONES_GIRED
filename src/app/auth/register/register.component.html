@@ -1,0 +1,235 @@
+<div class="container-fluid p-0">
+  <div class="row">
+    <div class="col-12">
+      <div class="register-card">
+        <div style="padding: 50px;">
+     
+          <form class="needs-validation" novalidate >
+            <h6>Datos de Usuarios</h6>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>TITULO</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="0">Elegir...</ng-option>
+                            <ng-option value="1">Prof.</ng-option>
+                            <ng-option value="2">Dr.</ng-option>
+                            <ng-option value="3">Sra.</ng-option>
+                            <ng-option value="4">Sr.</ng-option>
+                            <ng-option value="5">Otro</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>GENERO</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="0">Elegir...</ng-option>
+                            <ng-option value="1">Femenino</ng-option>
+                            <ng-option value="2">Masculino</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>TIPO DOCUMENTO</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="1">DNI</ng-option>
+                            <ng-option value="2">PASAPORTE</ng-option>
+                            <ng-option value="3">CARNET DE EXTRANJERIA</ng-option>
+                            <ng-option value="4">OTRO DOCUMENTO</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group" >
+                        <label>N&Uacute;MERO DE DOCUMENTO</label>
+                        <input type="text" class="form-control">
+                        <button matSuffix mat-icon-button (click)="consultarDni()" >
+                            <mat-icon>search</mat-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group ">
+                        <div class="form-group">
+                            <label>NOMBRES</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>APELLIDOS</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>PAÍS DE RESIDENCIA</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="1">Peru</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>DEPARTAMENTO DE RESIDENCIA</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="1">Lima</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>PROVINCIA DE RESIDENCIA</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="1">Lima</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>DISTRITO DE RESIDENCIA</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="1">Lince</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>DIRECCION DE RESIDENCIA</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>CODIGO POSTAL DE RESIDENCIA</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>CELULAR</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>TELEFONO</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>FAX</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>ORGANIZACION / INSTITUCIÓN</label>
+                        <ng-select placeholder="Seleccione">
+                            <ng-option value="1">Coen</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>CARGO</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h6 >Usuarios</h6>
+            <hr>
+            <div class="row" >
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>USUARIO</label>
+                            <input onkeyup="this.value=this.value.toUpperCase();" type="number" readonly
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group ">
+                        <div class="form-group">
+                            <label>CONTRASE&Ntilde;A</label>
+                            <input type="password" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group ">
+                        <div class="form-group">
+                            <label>EMAIL</label>
+                            <input type="text" class="form-control" onchange="ValidacionEmail()"
+                                placeholder="Ex. pat@example.com">
+                            <span style="color: #ff0000;">
+                                (El mail no puede quedar vac&iacute;o)
+                            </span>
+                            <span style="color: #ff0000;">
+                                (El mail no es v&aacute;lido)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label [hidden]="HabilitarPerfil" >PERFILES</label>
+                    <ng-container>
+                        <ng-container>
+                            <ng-select [items]="selectProfile" [hidden]="HabilitarPerfil"
+                                bindLabel="nombre" bindValue="id" (change)="getSelectProfile($event)"
+                                placeholder="Seleccione" [multiple]="false">
+                            </ng-select>
+                        </ng-container>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <div class="form-group mb-0">
+                        <button type="button" class="btn btn-primary mr-3" (click)="guardarUsuario()">
+                            <span>Guardar</span>
+                        </button>
+                        <button type="button" class="btn btn-danger"
+                            (click)="cancelProject()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

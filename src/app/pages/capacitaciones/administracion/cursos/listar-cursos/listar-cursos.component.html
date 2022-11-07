@@ -1,0 +1,81 @@
+<app-breadcrumb [title]="'Cursos'" [items]="['Cursos']" [active_item]="'Cursos'"></app-breadcrumb>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form>
+                        <div class="row">
+
+                            <mat-form-field class="col-lg-10" appearance="outline">
+                                <mat-label>Buscar por codigo, nombre o linea tematica del curso</mat-label>
+                                <input  matInput type="text">
+                            </mat-form-field>
+                            <div class="col-lg-2">
+                                <a class="btn btn-primary"
+                                    ngbTooltip="Registrar"
+                                    style="margin-top : 10px"
+                                    (click)="registrarCurso()">
+                                    <i class="fa fa-plus"></i>
+                                    Nuevo
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="table-responsive">
+                            <div id="data-source-1_wrapper" class="dataTables_wrapper">
+                                <div class="dataTables_length">
+                                    <label>Mostrar
+                                        <select name="data-source-1_length" >
+                                            <option value="10" selected>10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entradas</label>
+                                </div>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                                                                        <th class="text-center">Nivel</th>
+                                            <th class="text-center">Nombre</th>
+                                            <th class="text-center">Descripcion</th>
+                                            <th class="text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center align-middle" *ngFor="let i of arrCursos">
+                                        
+                                        <td class="align-middle">
+                                            {{i.nivel}}
+                                        </td>
+                                        <td class="align-middle">
+                                            {{i.codigo}} {{i.nombre}}
+                                        </td>
+                                        <td class="align-middle">
+                                            {{i.descripcion}}
+                                        </td>
+                                        <td class="align-middle">
+
+                                            <a style="color: #08afe0; cursor: pointer; font-size: 20px" ngbTooltip="Ver / Editar" (click)="editarVerCurso()">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a class="mr-2 ml-2" style="color: #f73164; cursor: pointer; font-size: 20px"
+                                                ngbTooltip="Eliminar" (click)="eliminarCurso()">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

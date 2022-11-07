@@ -1,0 +1,117 @@
+<app-breadcrumb [title]="'Calificación'" [active_item]="'Lista de Calificación'"></app-breadcrumb>
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+
+          <form>
+            <div class="row">
+
+              <div class="col-sm-10">
+                <div class="form-group" style="font-size: 13px">
+                  <div class="mb-10">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Buscar por numero de registro, posicion, fecha</mat-label>
+                      <input matInput type="text" formControlName="parBusqueda" [(ngModel)]="value"
+                        onkeyup="this.value=this.value.toUpperCase();">
+                      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                        <mat-icon>close</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-2">
+                <div class="form-group">
+                  <div class="mb-2">
+                    <a class="btn btn-primary btn-lg" (click)="create()">
+                      <i class="fa fa-plus-square-o"></i> Nuevo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <div id="data-source-1_wrapper" class="dataTables_wrapper">
+                <div class="dataTables_length">
+                  <label>Mostrar
+                    <select name="data-source-1_length" formControlName="cantRegistro">
+                      <option value="10">10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select> entradas</label>
+                </div>
+
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="text-center">Nro Registro</th>
+                      <th class="text-center">Nombres y Apellidos</th>
+                      <th class="text-center">Fecha Registro</th>
+                      <th class="text-center">Fecha Aprobacion</th>
+                      <th class="text-center">Nueva Posicion</th>
+                      <th class="text-center">Estado</th>
+                      <th class="text-center">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center" *ngFor="let i of solicitudUser">
+                      <td style="display:none ;">
+                        {{i.id}}
+                      </td>
+                      <td>
+                        {{i.codSolicitud}}
+                      </td>
+                      <td>
+                        {{i.nombresApellidos}}
+                      </td>
+                      <td>
+                        {{i.fechaSolicitud}}
+                      </td>
+                      <td>
+                        {{i.fechaSolicitud}}
+                      </td>
+                      <td>
+                        <span>{{i.pasicion}}</span>
+                      </td>
+                      <td>
+                        <span class="bg bg-primary" *ngIf="i.estado == 1 || i.estado == 4">POR APROBAR</span>
+                        <span class="bg bg-success" *ngIf="i.estado == 2">APROBADO</span>
+                        <span class="bg bg-danger" *ngIf="i.estado == 3">OBSERVADO</span>
+                      </td>
+                      <td>
+                        <a *ngIf="i.estado != 2" (click)="detailSolicitudUsuario()"
+                          class="mr-2 ml-2" style="color: #08afe0; cursor: pointer; font-size: 20px"
+                          ngbTooltip="Ver / Editar">
+                          <i class="fa fa-edit"></i>
+                        </a>
+                        <a *ngIf="i.estado != 2" class="mr-2 ml-2"
+                          style="color: #f73164; cursor: pointer; font-size: 20px" ngbTooltip="Eliminar" (click)="eliminarSolicitur(i.id)">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                        <a *ngIf="i.estado == 1 || i.estado == 4" (click)="AprobarSolicitud(i.id)" class="mr-2 ml-2"
+                          style="color: #08afe0; cursor: pointer; font-size: 22px" ngbTooltip="Aprobar">
+                          <i class="fa fa-check-circle"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

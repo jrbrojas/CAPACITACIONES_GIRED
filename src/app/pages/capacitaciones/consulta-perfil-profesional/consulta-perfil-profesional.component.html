@@ -1,0 +1,95 @@
+<app-breadcrumb [title]="'Consulta de informacion del administrado'" [items]="['Capacitaciones']" [active_item]="'Consulta Perfil Profesional'"></app-breadcrumb>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form>
+                        <div class="row">
+                            
+                            <div class="col-sm-3">
+                                <div class="form-group" style="font-size: 13px">
+                                    <div class="mb-2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Número de Documento de Identidad</mat-label>
+                                            <input formControlName="textoBusqueda" matInput type="text">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group" style="font-size: 13px">
+                                    <div class="mb-2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Apellidos y Nombres</mat-label>
+                                            <input formControlName="textoBusqueda" matInput type="text">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 mt-2">
+                                <button class="btn btn-primary btn-lg" [disabled]="!biRecatcha" (click)="nuevaBusqueda()"
+                                    ngbTooltip="Buscar">
+                                    <i class="fa fa-plus-square-o"></i> Buscar
+                                </button>
+                            </div>
+                            <div class="col-sm-2" style="top: -17px">
+                                <form [formGroup]="aFormGroup">
+                                    <ngx-recaptcha2 #captchaElem
+                                      [siteKey]="siteKey"
+                                      theme="light"
+                                      (success)="ngAceptaCapcha($event)"
+                                      formControlName="recaptcha">
+                                    </ngx-recaptcha2>
+                                  </form>
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="table-responsive" id="imprimir" [hidden]="boolOp"  >
+                            <div id="data-source-1_wrapper" class="dataTables_wrapper">
+                                <div class="dataTables_length">
+                                    <label>Mostrar
+                                        <select name="data-source-1_length" formControlName="cantidadRegistro">
+                                            <option value="10" selected>10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entradas</label>
+                                </div>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">GRADUADO</th>
+                                            <th class="text-center">NUMERO DOCUMENTO</th>
+                                            <th class="text-center">GRADO O TÍTULO</th>
+                                            <th class="text-center">FECHA</th>
+                                            <th class="text-center">INSTITUCIÓN</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="text-center" *ngFor="let item of data">
+                                            <td>{{item.id}}</td>
+                                            <td>{{item.nombre}}</td>
+                                            <td>{{item.numeroDocumento}}</td>
+                                            <td>{{item.titulo}}</td>
+                                            <td>{{item.fecha}}</td>
+                                            <td>{{item.institucion}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

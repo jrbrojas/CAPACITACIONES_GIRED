@@ -1,0 +1,78 @@
+<div class="modal-header text-center">
+    <h5 class="modal-title text-center">Agregar Experiencia</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true" (click)="closeModal()">×</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form class="needs-validation">
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Empresa</mat-label>
+                  <input matInput  >
+                </mat-form-field>
+              </div>
+              <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Siglas</mat-label>
+                  <input matInput  >
+                </mat-form-field>
+              </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha de inicio</mat-label>
+                        <input readonly matInput [ngxMatDatetimePicker]="picker" placeholder="Seleccione una fecha">
+                        <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha de cese</mat-label>
+                        <input readonly matInput [ngxMatDatetimePicker]="picker" placeholder="Seleccione una fecha">
+                        <mat-datepicker-toggle matSuffix [for]="$any(picker)"></mat-datepicker-toggle>
+                        <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-2" style="margin-top: 17px;">
+                <section class="example-section">
+                    <mat-checkbox class="example-margin" >Actualidad</mat-checkbox>
+                  </section>
+            </div>
+            <mat-form-field class="col-lg-6" appearance="outline">
+                <mat-label>Estado</mat-label>
+                <select matNativeControl required>
+                    <option value="" selected disabled>Seleccionar opcion</option>
+                    <option value="">Activo</option>
+                    <option value="">Inactivo</option>
+                </select>
+            </mat-form-field>
+            <div class="col-sm-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Condicion</mat-label>
+                  <input matInput  >
+                </mat-form-field>
+              </div>
+
+
+        </div>
+
+        <div class="row text-center">
+            <div class="col">
+                <div class="form-group mb-0">
+                    <div class="form-group mb-0">
+                        <button type="button" class="btn btn-primary mr-3">
+                            <span><i class="fa fa-save"></i> Guardar</span>
+                        </button>
+                        <button type="button" class="btn btn-danger"><i class="fa fa-ban"></i> Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

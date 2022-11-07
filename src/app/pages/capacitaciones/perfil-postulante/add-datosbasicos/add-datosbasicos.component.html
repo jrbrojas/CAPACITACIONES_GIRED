@@ -1,0 +1,165 @@
+<div class="modal-header text-center">
+    <h5 class="modal-title text-center">Ver/Editar Informacion Basica</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="needs-validations" novalidate>
+      
+        <mat-tab-group mat-align-tabs="center">
+            <div class="row">
+                <mat-tab label="Datos Personales">
+        <div class="form-group">
+          <h6>Foto personal</h6>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          <br>
+          <mat-divider></mat-divider>
+        </div>
+                    <div class="pt-4">
+                        <h6>Informacion personal</h6>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>DNI</mat-label>
+                            <input matInput type="text" placeholder="DNI">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Apellidos</mat-label>
+                            <input matInput type="text" placeholder="Apellidos">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Nombres</mat-label>
+                            <input matInput type="text" placeholder="Nombres">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Fecha de Nacimiento</mat-label>
+                            <input matInput type="date" placeholder="Fecha de nacimiento">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Estado Civil</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Soltero(a)</option>
+                                <option value="">Casado(a)</option>
+                                <option value="">Divorciado</option>
+                            </select>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Sexo</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Masculino</option>
+                                <option value="">Femenino</option>
+                            </select>
+                        </mat-form-field>
+                        <h6>Institución y Equipo USAR a la que pertenece:</h6>
+                        <mat-form-field class="col-lg-6" appearance="outline">
+                          <mat-label>Nombre de la Institución</mat-label>
+                          <input matInput type="text" placeholder="Nombre de la Institución">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-6" appearance="outline">
+                          <mat-label>Nombre del Equipo USAR</mat-label>
+                          <input matInput type="text" placeholder="Nombre del Equipo USAR">
+                        </mat-form-field>
+                        
+                        <mat-form-field class="col-lg-12" appearance="outline">
+                            <mat-label>Seleccione Asignación</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option *ngFor="let item of arrCurso" value="item.id">{{item.asignacion}}</option>
+                            </select>
+                        </mat-form-field>
+
+                        <h6>Informacion de contacto</h6>
+                        <mat-form-field class="col-lg-6" appearance="outline">
+                            <mat-label>Correo electronico</mat-label>
+                            <input matInput type="text" placeholder="Correo electronico">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Telefono</mat-label>
+                            <input matInput type="text" placeholder="Telefono">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-3" appearance="outline">
+                            <mat-label>Celular</mat-label>
+                            <input matInput type="text" placeholder="Celular">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-12" appearance="outline">
+                            <mat-label>Direccion</mat-label>
+                            <input matInput type="text" placeholder="Dirección">
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Departamento</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Lima</option>
+                                <option value="">Arequipa</option>
+                            </select>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Provincia</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Lima</option>
+                                <option value="">Arequipa</option>
+                            </select>
+                        </mat-form-field>
+                        <mat-form-field class="col-lg-4" appearance="outline">
+                            <mat-label>Distrito</mat-label>
+                            <select matNativeControl required>
+                                <option value="" selected disabled>Seleccionar opcion</option>
+                                <option value="">Lima</option>
+                                <option value="">Los Olivos</option>
+                            </select>
+                        </mat-form-field>
+                        <div class="d-flex justify-content-between">
+                            <h5>Familia</h5>
+                            <button class="btn btn-primary" (click)="addListaFamilia()">
+                                <div class="d-flex align-middle">
+                                    <mat-icon>add</mat-icon>Agregar Familia
+                                </div>
+                            </button>
+                        </div>
+                        <div *ngFor="let item of listaFamilia">
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                                <mat-label>Tipo</mat-label>
+                                <select matNativeControl required>
+                                    <option value="" selected disabled>Seleccionar opcion</option>
+                                    <option value="">Hijo (a)</option>
+                                    <option value="">Conyuge</option>
+                                </select>
+                            </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                                <mat-label>Nombres</mat-label>
+                                <input matInput type="text" [(ngModel)]="item.textNombre" placeholder="Ingrese nombres">
+                            </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                                <mat-label>Apellidos</mat-label>
+                                <input matInput type="text" [(ngModel)]="item.txtApellidos" placeholder="Ingrese apellidos">
+                            </mat-form-field>
+                            <mat-form-field class="col-lg-3" appearance="outline">
+                                <mat-label>Edad</mat-label>
+                                <input matInput type="number" [(ngModel)]="item.intEdad" placeholder="Ingrese edad">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </mat-tab>
+            </div>
+            
+        </mat-tab-group>
+
+      
+      <div class="row text-center">
+        <div class="col">
+          <div class="form-group mt-3 mb-0">
+            <button (click)="closeModal()" class="btn btn-primary mr-3 ">
+              Guardar
+            </button>
+            <button type="button" class="btn btn-danger" (click)="closeModal()" >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  

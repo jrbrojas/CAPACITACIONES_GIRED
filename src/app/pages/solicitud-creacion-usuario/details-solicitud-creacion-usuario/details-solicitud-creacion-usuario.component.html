@@ -1,0 +1,266 @@
+<app-breadcrumb [title]="'Detalle'" [items]="['Emergencia']" [active_item]="'Detalle'"></app-breadcrumb>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <form class="needs-validation" novalidate >
+                        <h6>Datos de Usuario</h6>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>TIPO DOCUMENTO</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">DNI</option>
+                                    </select>
+                                    <!-- <ng-select [items]="documentTypes"
+                                        bindLabel="descripcion" bindValue="id" >
+                                    </ng-select> -->
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>N&Uacute;MERO DE DOCUMENTO</label>
+                                    <input type="text" class="form-control" readonly value="78945656">
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group ">
+                                    <div class="form-group">
+                                        <label>NOMBRES</label>
+                                        <input onkeyup="this.value=this.value.toUpperCase();" type="text"
+                                            class="form-control" readonly value="DAVID">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <label>APELLIDOS</label>
+                                        <input onkeyup="this.value=this.value.toUpperCase();" type="text"
+                                            class="form-control" readonly value="GAMARRA">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                        <h6>Instituciones</h6>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>TIPO DE INSTITUCION</label>
+                                    <br>
+
+                                    <div class="custom-control custom-radio custom-control-inline"
+                                        style="margin-right: 120px">
+                                        <input name="rinstitucion" type="radio"
+                                            class="custom-control-input" id="defaultInline1" value="1"
+                                            (click)="changeStatus(1)" checked>
+                                        <label class="custom-control-label" for="defaultInline1">PUBLICO</label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio custom-control-inline"
+                                        style="margin-right: 150px;">
+                                        <input name="rinstitucion" type="radio"
+                                            class="custom-control-input" id="defaultInline2" value="2"
+                                            (click)="changeStatus(2)">
+                                        <label class="custom-control-label" for="defaultInline2">PRIVADO</label>
+                                    </div>
+
+                                    <!--
+                                    <mat-radio-group formControlName="tipoInstitucion">
+                                        <mat-radio-button value="1" style="margin-right: 20px;" (change)="changeStatus(1)" >PUBLICO</mat-radio-button>
+                                        <mat-radio-button value="2" (change)="changeStatus(2)" >PRIVADO</mat-radio-button>
+                                    </mat-radio-group>
+                               -->
+
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>INSTITUCION PUBLICA</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">INDECI</option>
+                                    </select>
+                                    <!-- <ng-select [items]="selectInstitucion" bindLabel="nombre" bindValue="id"
+                                         (change)="getSelectInstitucion($event)"
+                                        placeholder="Seleccione">
+                                    </ng-select> -->
+                                </div>
+
+                                <!--
+                                <div class="form-group" *ngIf="detailSolicitudUsuario.get('tipoInstitucion')?.value != '1'">
+                                    <label>INSTITUCION PRIVADA</label>
+                                    <ng-select [items]="selectInstitucionPrivada" bindLabel="nombre" bindValue="id"
+                                        formControlName="descripcionInstitucionPrivada" (change)="getSelectInstitucionPrivada($event)"
+                                        placeholder="Seleccione">
+                                    </ng-select>
+                                </div>
+    -->
+
+
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>CARGO</label>
+                                    <input type="text" class="form-control" value="EVALUADOR">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group ">
+                                    <div class="form-group">
+                                        <label>EMAIL</label>
+                                        <input type="text" class="form-control"
+                                            placeholder="Ex. pat@example.com" value="davidgamarra@gmail.com">
+                                        <!-- <span style="color: #ff0000;">
+                                            (El mail no puede quedar vac&iacute;o)
+                                        </span>
+                                        <span style="color: #ff0000;">
+                                            (El mail no es v&aacute;lido)
+                                        </span> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <h6>Geopol&iacute;tica</h6>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>NIVELES</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">NACIONAL</option>
+                                    </select>
+                                    <!-- <ng-select [items]="nivelTypes" bindLabel="descripcion"
+                                        bindValue="id" placeholder="Seleccione" (change)="getPerfilNivel()">
+                                    </ng-select> -->
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>REGI&Oacute;N</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">LIMA METROPOLITANA</option>
+                                    </select>
+                                    <!-- <ng-select [items]="selectRegion" bindLabel="descripcion" bindValue="codRegion"
+                                        (change)="getSelectRegion($event)"
+                                        placeholder="Seleccione">
+                                    </ng-select>
+                                    <div class="invalid-feedback"
+                                        *ngIf="detailSolicitudUsuario.controls['codigoRegion'].touched && detailSolicitudUsuario.controls['codigoRegion'].errors?.['required']">
+                                        Seleccione el ubigeo
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3"
+                                >
+                                <div class="form-group">
+                                    <label>PROVINCIA</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">LIMA METROPOLITANA</option>
+                                    </select>
+                                    <!-- <ng-select [items]="selectProvincia" bindLabel="descripcion"
+                                        bindValue="codProvincia"
+                                        (change)="getSelectProvincia($event)" placeholder="Seleccione">
+                                    </ng-select>
+                                    <div class="invalid-feedback"
+                                        *ngIf="detailSolicitudUsuario.controls['codProvincia'].touched && detailSolicitudUsuario.controls['codProvincia'].errors?.['required']">
+                                        Seleccione el ubigeo
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3"
+                                *ngIf="detailSolicitudUsuario.get('levels')?.value != '1' && detailSolicitudUsuario.get('levels')?.value != '2' && detailSolicitudUsuario.get('levels')?.value != '3'">
+                                <div class="form-group">
+                                    <label>DISTRITO</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">CHORRILLOS</option>
+                                    </select>
+                                    <!-- <ng-select [items]="selectDistrito" bindLabel="descripcion" bindValue="codDistrito"
+                                    (change)="getSelectDistrito($event)"
+                                        placeholder="Seleccione">
+                                    </ng-select>
+                                    <div class="invalid-feedback"
+                                        *ngIf="detailSolicitudUsuario.controls['codDistrito'].touched && detailSolicitudUsuario.controls['codDistrito'].errors?.['required']">
+                                        Seleccione el ubigeo
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>PERFIL</label>
+                                    <select name="" id="" class="form-control">
+                                      <option value="1">USAR</option>
+                                    </select>
+                                    <!-- <ng-container>
+                                        <ng-container>
+                                            <ng-select [items]="selectPerfilNivel"
+                                                bindLabel="nombre" bindValue="id"
+                                                (change)="getSelectPerfilNivel($event)" placeholder="Seleccione"
+                                                [multiple]="false">
+                                            </ng-select>
+                                        </ng-container>
+                                    </ng-container>
+                                    <div class="invalid-feedback"
+                                        *ngIf="detailSolicitudUsuario.controls['idPerfil'].touched && detailSolicitudUsuario.controls['idPerfil'].errors?.['required']">
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <h6>Notas Adicionales</h6>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>OBSERVACIONES</label>
+                                    <textarea class="form-control" rows="3"
+                                        maxlength="1000" required="true" readonly [value]="'Aprobado'"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>COMENTARIOS</label>
+                                    <textarea class="form-control" rows="3"
+                                        maxlength="1000" required="true" [value]="'Sin comentarios'"></textarea>
+                                </div>
+                            </div> -->
+                        </div>
+
+
+
+                        <div class="row text-center">
+                            <div class="col">
+                                <div class="form-group mb-0">
+                                    <button (click)="EditarUsuario()" type="button" class="btn btn-primary mr-3">
+                                        <span>Guardar</span>
+                                    </button>
+                                    <button type="button" class="btn btn-danger"
+                                        (click)="cancelProject()">Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

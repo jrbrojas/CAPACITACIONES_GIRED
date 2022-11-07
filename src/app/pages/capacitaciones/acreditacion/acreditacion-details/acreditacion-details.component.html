@@ -1,0 +1,103 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                        <hr>
+                        <div class="row col-lg-12">
+                            <div class="col-lg-12">
+                                <h5 class="container">Detalle administrado</h5>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">#</th>
+                                            <th scope="col" class="text-center">Criterio</th>
+                                            <th scope="col" class="text-center">Cantidad</th>
+                                            <th scope="col" class="text-center">Certificado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td class="text-center">Curso</td>
+                                            <td class="text-center">CR-130, S-131</td>
+                                            <td class="text-center"><a href="#"><i class="fa fa-files">Ver certificado</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td class="text-center">Adicional</td>
+                                            <td class="text-center">CR-130, S-131</td>
+                                            <td class="text-center"><a href="#"><i class="fa fa-files">Ver certificado</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">2</th>
+                                            <td class="text-center">Experiencia</td>
+                                            <td class="text-center">S-211, S-212, S-219	</td>
+                                            <td class="text-center"><a href="#"><i class="fa fa-files">Ver certificado</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">3</th>
+                                            <td class="text-center">Aptitud Física</td>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center"><a href="#"><i class="fa fa-files">Ver certificado</i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">4</th>
+                                            <td class="text-center">LTP</td>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center"><a href="#"><i class="fa fa-files">Ver certificado</i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-12">
+                                <h5 class="container">Asignaciones</h5>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">#</th>
+                                            <th scope="col" class="text-center">Posición</th>
+                                            <th scope="col" class="text-center">Acrónimo</th>
+                                            <th scope="col" class="text-center">Cursos</th>
+                                            <th scope="col" class="text-center">Adicional</th>
+                                            <th scope="col" class="text-center">Experiencia</th>
+                                            <th scope="col" class="text-center">Aptitud Física</th>
+                                            <th scope="col" class="text-center">LTP</th>
+                                            <th scope="col" class="text-center">Califica</th>
+                                            <th scope="col" class="text-center">Accion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of arrCalificado">
+                                            <td>{{item.id}}</td>
+                                            <td>{{item.nombre}}</td>
+                                            <td>{{item.codigo}}</td>
+                                            <td>{{item.cursos}}</td>
+                                            <td>{{item.adicional}}</td>
+                                            <td>{{item.experiencia}}</td>
+                                            <td>{{item.aptitud}}</td>
+                                            <td>{{item.ltp}}</td>
+                                            <td>{{item.califica}}</td>
+                                            <td>
+                                                <button *ngIf='item.califica == "Si" && item.estado == "1"' class="btn btn-primary text-center" (click)="add(item.nombre)">Asignar</button>
+                                                <button *ngIf='item.califica == "Si" && item.estado == "2"' class="btn btn-success text-center" (click)="add(item.nombre)">Asignado</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-danger text-center" (click)="closeModal()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

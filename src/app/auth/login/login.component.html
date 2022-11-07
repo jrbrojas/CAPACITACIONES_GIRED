@@ -1,0 +1,39 @@
+<body>
+  <div class="fullscreen-container">
+    <div class="login-container">
+      <!-- <img  class="img-fluid for-light m-l-80" style="height: 150px; margin-left: 15px;" src="assets/images/login/logo-simex.svg" alt=""> -->
+      <!-- <h1>CERTIFICACIONES</h1> -->
+      <!-- <h1>Login</h1>  -->
+      <div class="text-center m-4">
+        <img
+          src="../../../assets/images/loguito.png"
+          alt="">
+      </div>
+      <hr>
+      <form class="form">
+        <div class="input-group">
+          <input type="text" placeholder="Usuario" id="text" name="text" class="input-username">
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder="Password" id="password" name="password" class="input-password">
+        </div>
+        <div class="row">
+          <div class="col text-center" >
+            <button style="width: 80%;" (click)="login(1)">Ingresar</button>
+          </div>
+          <div class="col text-center">
+            <button style="width: 80%;" (click)="login(2)">Administrado</button>
+          </div>
+        </div>
+        
+        
+        <br>
+        <hr>
+        <div class="row">
+          <a (click)="register()" class="forgot-password">Crear nuevo usuario</a>
+          <a href="javascript:void(0)" class="forgot-password">Olvide Contraseña</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

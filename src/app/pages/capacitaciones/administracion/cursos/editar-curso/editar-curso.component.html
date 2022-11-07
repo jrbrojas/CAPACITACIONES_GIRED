@@ -1,0 +1,58 @@
+<div class="modal-header text-center">
+    <h5 class="modal-title text-center">Ver/Editar Curso</h5>
+    <button class="close" type="button" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="needs-validations" novalidate>
+
+      <div class="pt-4">
+        <mat-form-field class="col-lg-3" appearance="outline">
+            <mat-label>Linea Tematica</mat-label>
+            <select matNativeControl required>
+                <option value="1">Liderazgo</option>
+                <option value="">Manejo</option>
+                <option value="">Supresion</option>
+                <option value="">Sistema de Comando de Incidentes</option>
+            </select>
+        </mat-form-field>
+        <mat-form-field class="col-lg-3" appearance="outline">
+          <mat-label>Nivel</mat-label>
+          <select matNativeControl required>
+              <option value="">Básico</option>
+              <option value="1">Intermedio</option>
+              <option value="">Repaso Anual</option>
+              <option value="">Avanzado</option>
+              <option value="">Ejecutivo</option>
+          </select>
+      </mat-form-field>
+        <mat-form-field class="col-lg-3" appearance="outline">
+            <mat-label>Codigo de curso</mat-label>
+            <input matInput type="text" placeholder="Codigo de curso" value="L-180">
+        </mat-form-field>
+        <mat-form-field class="col-lg-3" appearance="outline">
+            <mat-label>Nombre de curso</mat-label>
+            <input matInput type="text" placeholder="Nombre de curso" value="Factores Humanos en el servicio de incendios forestales">
+        </mat-form-field>
+        <mat-form-field class="col-lg-12" appearance="outline">
+            <mat-label>Descripcion de curso</mat-label>
+            <textarea matInput required name="" id="" cols="30" rows="5" placeholder="Descripcion de curso" [value]="'Este curso es para reforzar el liderazgos frente a peligros de incendios forestales'"></textarea>
+        </mat-form-field>
+    </div>
+
+      <div class="row text-center">
+        <div class="col">
+          <div class="form-group mt-3 mb-0">
+            <button class="btn btn-primary mr-3 ">
+              Actualizar
+            </button>
+            <button type="button" class="btn btn-danger" (click)="closeModal()" >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+

@@ -1,0 +1,103 @@
+<app-breadcrumb [title]="'Perfiles de administrados'" [items]="['Seguridad']" [active_item]="'Permisos'"></app-breadcrumb>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <form>
+                        <div class="row">
+
+                            <div class="col-sm-10">
+                                <div class="form-group" style="font-size: 13px">
+                                    <div class="mb-2">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Buscar por Perfil</mat-label>
+                                            <input formControlName="textoBusqueda" matInput type="text">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <a class="btn btn-primary" (click)="addCompetitor()"
+                                    ngbTooltip="Nuevo Administrado">
+                                    <i class="fa fa-plus-square-o"></i> Nuevo Administrado
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="table-responsive">
+                            <div id="data-source-1_wrapper" class="dataTables_wrapper">
+                                <div class="dataTables_length">
+                                    <label>Mostrar
+                                        <select name="data-source-1_length" formControlName="cantidadRegistro">
+                                            <option value="10" selected>10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select> entradas</label>
+                                </div>
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">DNI</th>
+                                            <th class="text-center">Apellidos y Nombres</th>
+                                            <th class="text-center">Fecha Registro</th>
+                                            <th class="text-center">Fecha Aprobación</th>
+                                            <th class="text-center">Estado</th>
+                                            <th class="text-center">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr class="text-center" *ngFor="let i of dataBasicProfile">
+                                            <td>{{i.dni}}</td>
+                                            <td>{{i.lastNameCompetitor}} {{i.namesCompetitor}}</td>
+                                            <td>{{i.fechaRegistro}}</td>
+                                            <td>{{i.fechaAprobado}}</td>
+                                            <td>{{i.estado}}</td>
+                                            <td>
+                                                <div>
+                                                    <a  (click)="editarCompetitor()" class="mr-2 ml-2" style="color: #08afe0; cursor: pointer; font-size: 20px"
+                                                        ngbTooltip="Ver / Editar">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    <a class="mr-2 ml-2"
+                                                        style="color: #f73164; cursor: pointer; font-size: 20px"
+                                                        ngbTooltip="Eliminar" (click)="eliminar()">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                    <a (click)="aprobar(1)" class="mr-2 ml-2"
+                                                        style="color: #f73164; cursor: pointer; font-size: 20px"
+                                                        ngbTooltip="Aprobar">
+                                                        <i class="fa fa-check-circle"></i>
+                                                    </a>
+                                                    <a (click)="aprobar(2)" class="mr-2 ml-2"
+                                                        style="color: #f73164; cursor: pointer; font-size: 20px"
+                                                        ngbTooltip="Desaprobar">
+                                                        <i class="fa fa-thumbs-down"></i>
+                                                    </a>
+                                                    <a (click)="aprobar(3)" class="mr-2 ml-2"
+                                                        style="color: #f73164; cursor: pointer; font-size: 20px"
+                                                        ngbTooltip="Observar">
+                                                        <i class="fa fa-file-text-o"></i>
+                                                    </a>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
