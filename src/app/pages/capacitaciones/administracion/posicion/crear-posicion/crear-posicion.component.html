@@ -8,29 +8,29 @@
     <form class="needs-validations" novalidate>
       
       <div class="pt-4">
-        <mat-form-field class="col-lg-4" appearance="outline">
+        <!-- <mat-form-field class="col-lg-4" appearance="outline">
             <mat-label>Categoria</mat-label>
             <select matNativeControl [(ngModel)]="idCategria" required>
                 <option value="" selected disabled>Seleccionar opcion</option>
                 <option *ngFor="let item of arrCategoria" [value]="item.id">{{item.nombre}}</option>
             </select>
-        </mat-form-field>
+        </mat-form-field> -->
         <mat-form-field class="col-lg-4" appearance="outline">
             <mat-label>Nombre de asignación</mat-label>
             <input matInput type="text" placeholder="Nombre de asignación">
         </mat-form-field>
-        <mat-form-field class="col-lg-4" appearance="outline">
+        <!-- <mat-form-field class="col-lg-4" appearance="outline">
             <mat-label>Acronimo de asignación</mat-label>
             <input matInput type="text" placeholder="Acronimo de asignación">
-        </mat-form-field>
-        <mat-form-field class="col-lg-6" appearance="outline">
+        </mat-form-field> -->
+        <!-- <mat-form-field class="col-lg-6" appearance="outline">
             <mat-label>Calificado como</mat-label>
             <select matNativeControl required>
                 <option value="" selected disabled>Seleccionar opcion</option>
                 <option value="">Ninguna</option>
                 <option *ngFor="let item of arrCalificado" [value]="item.id" >{{item.nombre}}</option>
             </select>
-        </mat-form-field>
+        </mat-form-field> -->
         <!-- <mat-form-field class="col-lg-6" appearance="outline">
             <mat-label>Aptitud Fisica</mat-label>
             <select matNativeControl required>
@@ -45,7 +45,7 @@
             <textarea matInput required name="" id="" cols="30" rows="5" placeholder="Descripcion de l posición"></textarea>
         </mat-form-field>
         <div class="d-flex justify-content-between">
-          <div class="col-lg-3">
+          <!-- <div class="col-lg-3">
             <mat-label>Capacitaciones Requeridas
               <button mat-icon-button (click)="cursoAdd()" aria-label="Example icon button with a vertical three dot icon">
                 <mat-icon>add</mat-icon>
@@ -83,7 +83,7 @@
                 <option *ngFor="let item of arrExperienciaSelect" [value]="item.id" >{{item.nombre}}</option>
               </select>
             </mat-form-field>
-          </div>
+          </div> -->
           <!-- <div class="col-lg-3">
             <mat-label>LTP
               <button mat-icon-button (click)="ltpAdd()" aria-label="Example icon button with a vertical three dot icon">
