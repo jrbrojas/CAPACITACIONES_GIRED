@@ -35,7 +35,7 @@ export class ConsultaPerfilProfesionalComponent implements OnInit {
         'id': 2,
         'nombre': 'Jose Rojas',
         'numeroDocumento': '41534099',
-        'titulo': 'USAR',
+        'titulo': 'GIRED',
         'fecha': '12-2005 ',
         'institucion': 'Indeci'
       }, {

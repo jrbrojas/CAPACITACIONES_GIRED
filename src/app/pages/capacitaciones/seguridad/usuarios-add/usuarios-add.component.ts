@@ -244,7 +244,7 @@ export class UsuariosAddComponent implements OnInit {
       },
       {
         id: 2,
-        nombre: 'Administrador USAR'
+        nombre: 'Administrador GIRED'
       },
       {
         id: 3,
@@ -252,7 +252,7 @@ export class UsuariosAddComponent implements OnInit {
       },
       {
         id: 4,
-        nombre: 'Administrador USAR'
+        nombre: 'Administrador GIRED'
       },
       {
         id: 5,

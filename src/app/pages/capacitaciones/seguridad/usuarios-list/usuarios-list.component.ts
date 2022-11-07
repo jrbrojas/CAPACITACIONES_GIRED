@@ -34,7 +34,7 @@ export class UsuariosListComponent implements OnInit {
       id: 3,
       usuario: 'MarianaGP',
       nombre: 'Mariana Garcia',
-      perfil: 'Administrador USAR',
+      perfil: 'Administrador GIRED',
       estado: 'habilitado'
     },
     {
