@@ -30,12 +30,12 @@ export class ListarCursosComponent implements OnInit {
   ngOnInit(): void {
     this.arrCursos.push(
       {        
-        nivel: 'Básico',
-        nombre : 'Curso Básico del Sistema de Comando de Incidentes',
-        descripcion : 'Este curso es para reforzar el liderazgos frente a peligros de incendios forestales',
+        nivel: 'Avanzado',
+        nombre : 'GIRED',
+        descripcion : 'Descripción del curso GIRED',
         codigo : 'D-311',
       },
-      {        
+      /* {        
         nivel: 'Básico',
         nombre : 'Primera Respuesta a Incidentes con Materiales Peligrosos',
         descripcion : 'Este curso es para reforzar el liderazgos frente a peligros de incendios forestales',
@@ -76,7 +76,7 @@ export class ListarCursosComponent implements OnInit {
         nombre : 'Curso de búsqueda canina',
         descripcion : 'Este curso es para reforzar el liderazgos frente a peligros de incendios forestales',
         codigo : 'M-410',
-      },
+      }, */
       
     )
   }
