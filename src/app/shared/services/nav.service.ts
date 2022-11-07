@@ -104,11 +104,11 @@ export class NavService implements OnDestroy {
         { path: '/capacitaciones/acreditacion/list', title: 'Calificación', type: 'link' },
       ]
     },*/
-    {
+    /*{
       title: 'CREDENCIALIZACION', tooltip: 'CREDENCIALIZACION', icon: 'file-plus', type: 'sub', active: false, children: [
         { path: '/capacitaciones/acreditacion/generar-certificado', title: 'Emitir Certificado', type: 'link' },
       ]
-    },
+    },*/
     {
       title : 'ADMINISTRACION', tooltip : 'Administracion', icon: 'folder', type: 'sub', active : false, children:[
         { path: '/capacitaciones/administracion/cursos', title: 'Cursos', type : 'link' },
