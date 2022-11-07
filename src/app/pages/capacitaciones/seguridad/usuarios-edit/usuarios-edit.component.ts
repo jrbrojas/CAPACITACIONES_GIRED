@@ -295,7 +295,7 @@ export class UsuariosEditComponent implements OnInit {
       },
       {
         id: 4,
-        nombre: 'Administrador USAR'
+        nombre: 'Administrador GIRED'
       },
       {
         id: 5,

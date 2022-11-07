@@ -459,7 +459,7 @@ export class AddPerfilesComponent implements OnInit {
     this.selectTipoEspecializacion = [
       {
         id: 1,
-        nombre: 'USAR'
+        nombre: 'GIRED'
       }
     ];
 
@@ -482,7 +482,7 @@ export class AddPerfilesComponent implements OnInit {
       },
       {
         id: 5,
-        nombre: 'Cursos USAR'
+        nombre: 'Cursos GIRED'
       },
       {
         id: 4,

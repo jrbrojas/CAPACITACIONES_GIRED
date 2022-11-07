@@ -13,7 +13,7 @@ export class PerfilesListComponent implements OnInit {
   public data: any = [
     /* {
       id: 1,
-      perfil: "Administrador USAR",
+      perfil: "Administrador GIRED",
       descripcion: "Este perfil cuenta con todos los accesos y permisos permitidos para administrar informacón del personal GIRED",
       permisos: "Crear, Editar, Eliminar, Ver",
       habilitado: "Si"
@@ -27,8 +27,8 @@ export class PerfilesListComponent implements OnInit {
     }, */
     {
       id: 3,
-      perfil: "Administrador USAR",
-      descripcion: "Este perfil cuenta con todos los accesos y permisos permitidos para administrar informacón del personal USAR",
+      perfil: "Administrador GIRED",
+      descripcion: "Este perfil cuenta con todos los accesos y permisos permitidos para administrar informacón del personal GIRED",
       permisos: "Crear, Editar, Eliminar, Ver",
       habilitado: "Si"
     },

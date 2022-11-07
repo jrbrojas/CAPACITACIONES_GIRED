@@ -40,7 +40,7 @@ export class AddFormacionacademicaComponent implements OnInit {
     },
     {
       id: 5,
-      nombre: 'Cursos USAR'
+      nombre: 'Cursos GIRED'
     },
     {
       id: 4,
