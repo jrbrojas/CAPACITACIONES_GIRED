@@ -61,20 +61,20 @@ export class ListaPosicionComponent implements OnInit {
 
     this.arrCurso.push({
       
-      codigo : 'LE',
+      codigo : '1',
       tarea : 'Comando',
       asignacion : 'Lider de Equipo',
       numeroSugerido : 'Liviano',
       codigoCategoria : 'C001'
     },
     {
-      codigo : 'LA',
+      codigo : '2',
       tarea : 'Coordinacion',
-      asignacion : 'Lider de Equipo (Designado)',
+      asignacion : 'Adjunto Lider de Equipo',
       numeroSugerido : 'Liviano',
       codigoCategoria : 'C001'
     },
-    {
+    /* {
       codigo : 'OP',
       tarea : 'Oficial de Planificación',
       asignacion : 'Oficial de Planificacion',
@@ -255,7 +255,7 @@ export class ListaPosicionComponent implements OnInit {
       asignacion : 'Especialista en Comunicación',
       numeroSugerido : 'Mediano',
       codigoCategoria : 'C005'
-    },
+    }, */
   )
 
     
