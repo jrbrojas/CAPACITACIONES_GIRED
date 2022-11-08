@@ -60,7 +60,7 @@
               <mat-label>Nombre del Equipo GIRED</mat-label>
               <input matInput type="text" placeholder="Nombre del Equipo GIRED">
             </mat-form-field>
-            
+
             <mat-form-field class="col-lg-12" appearance="outline">
               <mat-label>Seleccione Asignación</mat-label>
               <select matNativeControl required>
@@ -174,11 +174,11 @@
                     <option *ngFor="let tipoFormacion of selectTipoFormacion; let i = index" [ngValue]="tipoFormacion.id">{{ tipoFormacion.nombre }}</option>
                   </select>
                 </mat-form-field>
-                <mat-form-field class="col-lg-4" appearance="outline" *ngIf="form.get('tipoFormacion').value == 4">
+                <!-- <mat-form-field class="col-lg-4" appearance="outline" *ngIf="form.get('tipoFormacion').value == 5">
                   <mat-label>Ingrese el nombre del curso</mat-label>
                   <input formControlName="institucion" matInput type="text" placeholder="Institucion">
-                </mat-form-field>
-                <mat-form-field class="col-lg-4" appearance="outline" *ngIf="form.get('tipoFormacion').value != 4">
+                </mat-form-field> -->
+                <mat-form-field class="col-lg-4" appearance="outline" *ngIf="form.get('tipoFormacion').value == 5">
                   <mat-label>Cursos</mat-label>
                   <select formControlName="curso" matNativeControl required>
                     <option value="" selected disabled>Seleccionar opcion</option>
@@ -567,6 +567,21 @@
               </mat-form-field>
             </div>
             <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi10 == 1" appearance="outline">
+              <mat-label>Ingrese la experiencia realizada</mat-label>
+              <input matInput type="text" placeholder="Ingrese la experiencia realizada">
+            </mat-form-field>
+            <div class="col-lg-4">
+              <label>Dezlizamiento:</label>
+            </div>
+            <div class="col-lg-8">
+              <mat-form-field appearance="outline">
+                <mat-label>Seleccione</mat-label>
+                <select matNativeControl [ngModelOptions]="{standalone: true}" [(ngModel)]="inNivelExperienciaSi11" required>
+                  <option *ngFor="let aptitudFisica of selectNivelExperienciaPeligro; let i = index" [ngValue]="aptitudFisica.id">{{ aptitudFisica.nombre }}</option>
+                </select>
+              </mat-form-field>
+            </div>
+            <mat-form-field class="col-lg-12" *ngIf="inNivelExperienciaSi11 == 1" appearance="outline">
               <mat-label>Ingrese la experiencia realizada</mat-label>
               <input matInput type="text" placeholder="Ingrese la experiencia realizada">
             </mat-form-field>
