@@ -35,6 +35,7 @@ export class AddPerfilesComponent implements OnInit {
   inNivelExperienciaSi8: number = 0;
   inNivelExperienciaSi9: number = 0;
   inNivelExperienciaSi10: number = 0;
+  inNivelExperienciaSi11: number = 0;
 
   idUsuario: number = 0;
   fichaPerfil : FichaPerfil = new FichaPerfil();
