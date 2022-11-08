@@ -38,8 +38,8 @@ export class SidebarComponent implements OnInit {
         this.menuItems.splice(-1, 1)
       }
       if (tipoLogin == "2") {
-        this.menuItems.splice(0, 2)
-        //this.menuItems.splice(0, 5)
+        this.menuItems.splice(0, 1)
+        this.menuItems.splice(0, 3)
         console.log(this.menuItems)
       }
       this.router.events.subscribe((event) => {
