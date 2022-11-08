@@ -44,7 +44,7 @@ h1 {
     font-size: 1.1rem;
     padding: 8px;
     text-align: center;
-    background: rgba(169, 130, 241, 0.7);
+    background: rgb(89 10 233 / 70%);
     color: #ffffff;
     border: none;
     outline: none;
@@ -55,8 +55,8 @@ h1 {
 }
 
 input::placeholder {
-  color: #ffffff;
-  font-weight: bold;
+  color: #dfdfdf;
+  font-size: 18px;
 }
 
 .input-group input:focus {
