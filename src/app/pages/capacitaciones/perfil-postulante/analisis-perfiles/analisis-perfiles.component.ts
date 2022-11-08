@@ -85,9 +85,9 @@ export class AnalisisPerfilesComponent implements OnInit {
     }, {
       id: 2,
       idCategoria: 1,
-      nombre: 'Lider del equipo designado',
+      nombre: 'Adunto Lider del equipo',
       codigo: 'CIT4'
-    }, {
+    }, /* {
       id: 3,
       idCategoria: 1,
       nombre: 'Oficial de Planificación',
@@ -122,7 +122,7 @@ export class AnalisisPerfilesComponent implements OnInit {
       idCategoria: 2,
       nombre: 'Responsable del Logística',
       codigo: 'JEFB'
-    }
+    } */
   ]
 
   constructor(
