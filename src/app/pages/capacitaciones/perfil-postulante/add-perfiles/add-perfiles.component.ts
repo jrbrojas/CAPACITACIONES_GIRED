@@ -63,9 +63,9 @@ export class AddPerfilesComponent implements OnInit {
   },
   {
     id: 1,
-    asignacion : 'Lider de Equipo (Designado)',
+    asignacion : 'Adjunto Lider de Equipo',
   },
-  {
+  /* {
     id: 1,
     asignacion : 'Oficial de Planificacion',
   },
@@ -168,7 +168,7 @@ export class AddPerfilesComponent implements OnInit {
   {
     id: 1,
     asignacion : 'Especialista en Comunicación',
-  }]
+  } */]
 
   public data1: any = [
     {
