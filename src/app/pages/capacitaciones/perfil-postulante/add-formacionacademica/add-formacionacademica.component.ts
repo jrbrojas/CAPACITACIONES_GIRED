@@ -40,7 +40,7 @@ export class AddFormacionacademicaComponent implements OnInit {
     },
     {
       id: 5,
-      nombre: 'Cursos GIRED'
+      nombre: 'Curso GIRED'
     },
     {
       id: 4,
@@ -56,36 +56,8 @@ export class AddFormacionacademicaComponent implements OnInit {
   selectCursos = [
     {
       id: 1,
-      nombre: 'Curso Básico del Sistema de Comando de Incidentes',
-    },
-    {
-      id: 2,
-      nombre: 'Primera Respuesta a Incidentes con Materiales Peligrosos',
-    },
-    {
-      id: 3,
-      nombre: 'Rescate con Cuerdas',
-    },
-    {
-      id: 4,
-      nombre: 'Curso de Primeros Auxilios y Atención PreHospitalaria',
-    },
-    {
-      id: 5,
-      nombre: 'Curso de rescate es estructuras colapsadas en el Nivel Liviano  ',
-    },
-    {
-      id: 6,
-      nombre: 'Curso de rescate en espacios confinados',
-    },
-    {
-      id: 7,
-      nombre: 'Curso de Instructores',
-    },
-    {
-      id: 8,
-      nombre: 'Curso de búsqueda canina',
-    },
+      nombre: 'Curso GIRED',
+    }
   ];
 
   selectPais = [
