@@ -45,22 +45,22 @@ export class ConsultaPerfilProfesionalComponent implements OnInit {
         'titulo': 'GIRED',
         'fecha': '11-2015',
         'institucion': 'Indeci'
-      }, {
+      },/*  {
         'id': 4,
         'nombre': 'Jose Rojas',
         'numeroDocumento': '41534099',
         'titulo': 'Combatientes del Fuego',
         'fecha': '04-2022',
         'institucion': 'Indeci'
-      },{
-        'id': 5,
+      }, */{
+        'id': 4,
         'nombre': 'Jose Rojas',
         'numeroDocumento': '41534099',
         'titulo': 'D-311 Despachador de Ataque Inicial',
         'fecha': '10-2022',
         'institucion': 'COEN ESPAÑA'
       },{
-        'id': 6,
+        'id': 5,
         'nombre': 'Jose Rojas',
         'numeroDocumento': '41534099',
         'titulo': 'P-101 Prevención y Educación de incendios Forestales',
