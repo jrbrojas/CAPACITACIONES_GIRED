@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -46,5 +47,9 @@ export class LoginComponent implements OnInit {
   }
 
   hide = true;
+
+  async recuperarClave() {
+    this.router.navigate(['/reset-password/:7937nt78t5nc479wymxt407ytc90cw374590387452v903872h3496823c9465c8235689234657938c23465hco3']);
+  }
 
 }

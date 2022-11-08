@@ -33,7 +33,6 @@ export class SidebarComponent implements OnInit {
         location.reload();
       }
       console.log("el tipo de login es", tipoLogin);
-      debugger;
       if (tipoLogin == "1") {
         this.menuItems.splice(-1, 1)
       }
