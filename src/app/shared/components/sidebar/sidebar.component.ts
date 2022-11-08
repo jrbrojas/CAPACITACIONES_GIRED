@@ -33,13 +33,13 @@ export class SidebarComponent implements OnInit {
         location.reload();   
       }
       console.log("el tipo de login es", tipoLogin);
-
+      debugger;
       if (tipoLogin == "1") {
         this.menuItems.splice(-1, 1)
       }
       if (tipoLogin == "2") {
         this.menuItems.splice(0, 1)
-        this.menuItems.splice(0, 5)
+        this.menuItems.splice(0, 3)
       }
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
