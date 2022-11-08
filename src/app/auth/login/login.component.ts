@@ -29,9 +29,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(type : number) {
-    localStorage.setItem("tipoLogin", JSON.stringify(type))    
-    localStorage.setItem("actualizar", JSON.stringify(true))    
-    if(type == 1) 
+    localStorage.setItem("tipoLogin", JSON.stringify(type))
+    localStorage.setItem("actualizar", JSON.stringify(true))
+    if(type == 1)
       this.router.navigate(['/simulaciones/seguridad/usuarios']);
     else
       this.router.navigate(['/capacitaciones/perfil-postulante/vista-administrado']);

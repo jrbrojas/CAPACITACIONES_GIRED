@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.elem = document.documentElement;
     const datoGeoPolitico = localStorage.getItem('datoGeoPolitico');
-    this.descripcionNivel = this.obtenerDescripcionNivel(datoGeoPolitico);
+    //this.descripcionNivel = this.obtenerDescripcionNivel(datoGeoPolitico);
   }
 
   sidebarToggle() {
@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
   //--
 
 
-  obtenerDescripcionNivel(datoGeoPolitico: any){
+  /*obtenerDescripcionNivel(datoGeoPolitico: any){
     const nivel = JSON.parse(datoGeoPolitico).nivel;
     let descNivel = '';
 
@@ -89,7 +89,7 @@ export class HeaderComponent implements OnInit {
     }
 
     return descNivel;
-  }
+  }*/
 
 
 }

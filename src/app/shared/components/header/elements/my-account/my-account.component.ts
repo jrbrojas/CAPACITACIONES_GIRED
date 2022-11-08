@@ -16,8 +16,8 @@ export class MyAccountComponent implements OnInit {
 
     const datoGeoPolitico = localStorage.getItem('datoGeoPolitico');
     this.nombresApellidos = JSON.parse(localStorage.getItem('nombresApellidos'));
-    const nivel= JSON.parse(datoGeoPolitico).nivel;
-    this.obtenerNivel(nivel);
+    //const nivel= JSON.parse(datoGeoPolitico).nivel;
+    //this.obtenerNivel(nivel);
 
   }
 
